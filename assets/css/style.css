@@ -1,20 +1,32 @@
 .tutorial__wrap {position:relative;margin:0 auto;width:982px;height:775px;}
+.inner-bg-type  {width:50%;height: 646px;overflow: hidden;}
+.inner-bg-type.is-show {width:100%;}
+
+.tutorial__wrap.is-stand:after {content: ''; display: block;position: absolute; left: 0; top: 0; width: 100%; height: 100%;background:rgba(255,255,255,0.1);z-index:5;}
 .tutorial__wrap .box01,
 .tutorial__wrap .box02,
 .tutorial__wrap .box03 {position: relative;}
+.tutorial__wrap.is-active .highlight-line1 .pointer {animation-name: fadeIn; animation-duration: 2s;animation-fill-mode: forwards;}
+.tutorial__wrap.is-active .highlight-line2 .pointer {animation-delay: 1s;animation-name: fadeIn; animation-duration: 2s;animation-fill-mode: forwards;}
+.tutorial__wrap.is-active .highlight-line3 .pointer {animation-delay: 1.25s;animation-name: fadeIn; animation-duration: 2s;animation-fill-mode: forwards;}
+.tutorial__wrap.is-active .highlight-line4 .pointer {animation-delay: 1.5s;animation-name: fadeIn; animation-duration: 2s;animation-fill-mode: forwards;}
+.tutorial__wrap.is-active .highlight-line5 .pointer {animation-delay: 1.75s;animation-name: fadeIn; animation-duration: 2s;animation-fill-mode: forwards;}
+.tutorial__wrap.is-active .highlight-line6 .pointer {animation-delay: 2s;animation-name: fadeIn; animation-duration: 2s;animation-fill-mode: forwards;}
+.tutorial__wrap.is-active .highlight-line7 .pointer {animation-delay: 2.25s;animation-name: fadeIn; animation-duration: 2s;animation-fill-mode: forwards;}
+.tutorial__wrap.is-active .highlight-line8  .pointer {animation-delay: 2.5s;animation-name: fadeIn; animation-duration: 2s;animation-fill-mode: forwards;}
 .tutorial__wrap.is-active .pointer {display: block !important;}
 .red-link-line {position:absolute;display: block;border: 2px solid #ff3e00;}
 .cursor-pointer-wrap {width:100%;height:100%;position: relative;}
 
 /* pointer */
-.pointer{display: none; position: absolute; right: 85px; top:25px; width: 40px; height: 40px; cursor:pointer;}
+.pointer{display: none; position: absolute; right: 85px; top:25px; width: 40px; height: 40px; cursor:pointer;opacity: 0;}
 .point{background: url(../images/point.png) no-repeat center center; width: 31px; height: 33px; position: absolute; bottom:-15px; right: -15px;}
 .circle{opacity:0; position: absolute; border:2px solid #ff9900; width: 20px; height: 20px; border-radius: 20px; top:50%; left:50%; margin-top:-15px; margin-left:-15px; animation-name:point; animation-delay: 0; animation-duration: 2s; animation-iteration-count: infinite;}
 .circle2{opacity:0; position: absolute; border:2px solid #ff9900; width: 20px; height: 20px; border-radius: 20px; top:50%; left:50%; margin-top:-15px; margin-left:-15px; animation-name:point; animation-delay: 0.5s; animation-duration: 2s; animation-iteration-count: infinite;}
 .circle3{opacity:0; position: absolute; border:2px solid #ff9900; width: 20px; height: 20px; border-radius: 20px; top:50%; left:50%; margin-top:-15px; margin-left:-15px; animation-name:point; animation-delay: 1s; animation-duration: 2s; animation-iteration-count: infinite;}
 
 
-.tooltip__area--bottom {width:calc(100% - 40px); display:table;background:#fff; position: absolute;font-size: 0; border: 2px solid #2a71b9; border-radius: 10px; height: 147px; bottom: 0px; box-shadow: 2px 2px 6px 0.5px gray; margin: 20px; animation-name: fadeIn; animation-duration: 2s;z-index: 1;}
+.tooltip__area--bottom {width:calc(100% - 40px); display:table;background:#fff; position: absolute;font-size: 0; border: 2px solid #2a71b9; border-radius: 10px; height: 147px; bottom: 0px; box-shadow: 2px 2px 6px 0.5px gray; margin: 20px; animation-name: fadeIn; animation-duration: 2s;z-index: 10;}
 .logo__wrap--left {position:relative;display:table-cell;vertical-align: middle;width:195px;text-align: center;}
 .logo__wrap--left::after {content: "";display: block;position: absolute;width: 5px;height:110px;right:0;top:17px;background-color: #2a71b9;border-radius: 6px;}
 .text-guide__wrap--right {position:relative;display:table-cell;vertical-align: middle;padding:0 17px 0 46px}
@@ -27,7 +39,7 @@
 .btn__blue-type {color:#2a71b9;font-size:18px;border:1px solid #2a71b9;border-radius: 12px;padding: 6px 30px;}
 
 .tutorial__wrap .box02 { animation-name: fadeIn; animation-duration: 2s;}
-.tutorial__wrap .box03 { opacity:0;animation-delay: 3s;animation-name: fadeIn; animation-duration: 2s;animation-fill-mode: forwards;}
+.tutorial__wrap .box03 { animation-delay: 3s;animation-name: fadeIn; animation-duration: 2s;animation-fill-mode: forwards;}
 .tutorial__wrap .box03 .pointer {display: block;top: 0;right: -30px;}
 .tutorial__wrap .box03 .pointer .point {bottom:0;right:0;}
 
