@@ -42,6 +42,19 @@
             guideText[0].style.display = 'none';
             guideText[1].style.display = 'block';
         });
+
+        // document.getElementById("hide").onclick = function() {
+        //     var o = document.getElementsByClassName("details");
+        //     for ( var i = 0; i < o.length; i++ ) {
+        //         if (o[i].style.display == 'none') {
+        //             o[i].style.display = 'block';
+        //             this.innerText='hide';
+        //         } else {
+        //             o[i].style.display = 'none';
+        //             this.innerText='show';
+        //         }
+        //     }
+        
     });
 
 })()
