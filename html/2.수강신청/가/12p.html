@@ -16,10 +16,7 @@
             </div>
             <div class="text-guide__wrap--right">
                 <div class="text-guide">
-                    2. 접수종목에서 선택한 종목과 교육기간을 확인합니다.<br>
-                    3. *표시된 필수항목을 빠짐없이 기입합니다.<br>
-                    4. 입력 후 왼쪽의 등록버튼을 클릭하고 사진등록을 진행
-
+                   접수종목에서 선택한 종목과 교육기간을 확인합니다.                
                 </div>
                 <div class="btn-confirm__blue-btn">
                     <a href="13p.html" class="btn__blue-type  btn-multi-event">확인</a>
@@ -39,10 +36,10 @@
                 </div>
             </div> -->
         </div>
-        <div class="red-link-line highlight-line2" style="width: 688px;height: 271px;left: 146px;top: 487px;">
+        <div class="red-link-line highlight-line2" style="width: 688px;height: 271px;left: 146px;top: 487px;display: none;">
 
         </div>
-        <a href="#" class="red-link-line highlight-line3" style="width: 52px;height: 29px;left: 149px;top: 597px;">
+        <a href="#" class="red-link-line highlight-line3 btn-next-end" style="width: 52px;height: 29px;left: 149px;top: 597px;display: none;">
             <div class="cursor-pointer-wrap">
                 <div class="pointer" style="display: none;right: -5px;top: -5px;">
                     <div class="point">&nbsp;</div>
@@ -56,6 +53,43 @@
         </a>
         <img src="../../../assets/images/12p.jpg" alt="방법1. KCA 국가기술자격검정 홈페이지(www.cq.or.kr) 메인 화면의 자격취득교육 접수 클">
     </div>
-    <script src="../../../assets/js/script.js"></script>
+    <script> 
+        (function () {
+            document.addEventListener('DOMContentLoaded',function(){  
+                var array = [                                
+                    ' *표시된 필수항목을 빠짐없이 기입합니다.',            
+                    ' 입력 후 왼쪽의 등록버튼을 클릭하고 사진등록을 진행'
+                ];        
+                let c = 0;
+                let clc = 1; 
+                const msgbox = document.querySelector('.text-guide');
+                const btnNext = document.querySelector('.btn__blue-type');
+                const tooltipWrap = document.querySelector('.tooltip__area--bottom');
+                const wRap = document.querySelector('.tutorial__wrap');
+                const RedLine = document.querySelectorAll('.red-link-line');
+                btnNext.addEventListener('click',myFunction);
+                function myFunction(e) {
+                    e.preventDefault();
+                                             
+                    if (c < array.length) {                
+                        //newArr.push(array[c++])                
+                        msgbox.innerHTML = array[c++];        
+                        RedLine[clc++].style.display = 'block';
+                    } else{
+                        tooltipWrap.style.display = 'none';
+                        wRap.classList.remove('is-stand');
+                        wRap.classList.add('is-active');
+                    };
+                }
+                const btnClose = document.querySelector('.btn-next-end');
+                btnClose.addEventListener('click',selfclose);
+                function selfclose(){
+                    alert('튜토리얼을 종료합니다');
+                    wRap.style.display = 'none';
+                }
+            });
+        })()        
+    </script>    
+    <!-- <script src="../../../assets/js/script.js"></script> -->
 </body>
 </html>

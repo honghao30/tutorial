@@ -44,8 +44,10 @@
                 //newArr.push(array[c++])                
                 msgbox.innerHTML = array[c++];        
             } else{
-                console.log('dd');
-                tooltipWrap.style.display = 'none';
+                alert('튜토리얼을 종료합니다');
+                //window.close();
+                document.querySelector('.tutorial__wrap').style.display = 'none';
+                //tooltipWrap.style.display = 'none';
             };
         }
     });

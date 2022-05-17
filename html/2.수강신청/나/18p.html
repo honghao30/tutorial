@@ -16,12 +16,7 @@
             </div>
             <div class="text-guide__wrap--right">
                 <div class="text-guide ft16">
-                   <ul>
-                       <li>1. 사진촬영 결과를 확인합니다.</li>
-                       <li>2. 재촬영이 필요한 경우, 다시 찍기를 클릭합니다.</li>
-                       <li> 3. 재촬영이 필요하지 않는 경우, [등록]버튼을 클릭 후 사진등록을 완료.</li>
-                    </ul>
-
+                    사진촬영 결과를 확인합니다.
                 </div>
                 <div class="btn-confirm__blue-btn">
                     <a href="18p.html" class="btn__blue-type  btn-multi-event">확인</a>
@@ -41,7 +36,7 @@
                 </div>
             </div> -->
         </a>
-        <a href="#" class="red-link-line highlight-line2" style="width: 64px;height: 37px;right: 431px;top: 525px;">
+        <a href="#" class="red-link-line highlight-line2 btn-next-end" style="width: 64px;height: 37px;right: 431px;top: 525px;">
             <div class="cursor-pointer-wrap">
                 <div class="pointer" style="display: none;right: -5px;top: -5px;">
                     <div class="point">&nbsp;</div>
@@ -55,6 +50,43 @@
         </a>
         <img src="../../../assets/images/18p.jpg" alt="방법2. 컴퓨터에 카메라가 설치된 경우">
     </div>
-    <script src="../../../assets/js/script.js"></script>
+    <!-- <script src="../../../assets/js/script.js"></script> -->
+    <script> 
+        (function () {
+            document.addEventListener('DOMContentLoaded',function(){  
+                var array = [                                
+                    '재촬영이 필요한 경우, 다시 찍기를 클릭합니다.',                                
+                    '재촬영이 필요하지 않는 경우, [등록]버튼을 클릭 후 사진등록을 완료.'
+                ];        
+                let c = 0;
+                let clc = 2; 
+                const msgbox = document.querySelector('.text-guide');
+                const btnNext = document.querySelector('.btn__blue-type');
+                const tooltipWrap = document.querySelector('.tooltip__area--bottom');
+                const wRap = document.querySelector('.tutorial__wrap');
+                const RedLine = document.querySelectorAll('.red-link-line');
+                btnNext.addEventListener('click',myFunction);
+                function myFunction(e) {
+                    e.preventDefault();
+                                             
+                    if (c < array.length) {                
+                        //newArr.push(array[c++])                
+                        msgbox.innerHTML = array[c++];        
+                        RedLine[clc++].style.display = 'block';
+                    } else{
+                        tooltipWrap.style.display = 'none';
+                        wRap.classList.remove('is-stand');
+                        wRap.classList.add('is-active');
+                    };
+                }
+                const btnClose = document.querySelector('.btn-next-end');
+                btnClose.addEventListener('click',selfclose);
+                function selfclose(){
+                    alert('튜토리얼을 종료합니다');
+                    wRap.style.display = 'none';
+                }
+            });
+        })()        
+    </script>   
 </body>
 </html>

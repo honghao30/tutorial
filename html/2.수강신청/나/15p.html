@@ -16,11 +16,7 @@
             </div>
             <div class="text-guide__wrap--right">
                 <div class="text-guide">
-                   <ul>
-                       <li> 1. 휴대전화(스마트폰)의 카메라를 실행시키고 QR코드를 인식(비추기◯ , 촬영 X)합니다.</li>
-                        <li>2. 휴대전화에서 별도의 이동링크(페이지 주소) 등의<br>&nbsp;&nbsp;&nbsp; 안내가 나타나면 해당 부분을 선택해 이동합니다.</li>
-</ul>
-
+                    휴대전화(스마트폰)의 카메라를 실행시키고 QR코드를 인식(비추기◯ , 촬영 X)합니다.
                 </div>
                 <div class="btn-confirm__blue-btn">
                     <a href="16p.html" class="btn__blue-type  btn-multi-event">확인</a>
@@ -66,6 +62,42 @@
         </div>
         <img src="../../../assets/images/15p.jpg" alt="안면인식 사진등록 관련 유의사항">
     </div>
-    <script src="../../../assets/js/script.js"></script>
+    <script> 
+        (function () {
+            document.addEventListener('DOMContentLoaded',function(){  
+                var array = [  
+                    '휴대전화에서 별도의 이동링크(페이지 주소) 등의 안내가 나타나면<br> 해당 부분을 선택해 이동합니다.'
+                ];        
+                let c = 0;
+                let clc = 1; 
+                const msgbox = document.querySelector('.text-guide');
+                const btnNext = document.querySelector('.btn__blue-type');
+                const tooltipWrap = document.querySelector('.tooltip__area--bottom');
+                const wRap = document.querySelector('.tutorial__wrap');
+                const RedLine = document.querySelectorAll('.red-link-line');
+                btnNext.addEventListener('click',myFunction);
+                function myFunction(e) {
+                    e.preventDefault();
+                                             
+                    if (c < array.length) {                
+                        //newArr.push(array[c++])                
+                        msgbox.innerHTML = array[c++];        
+                        RedLine[clc++].style.display = 'block';
+                    } else{
+                        tooltipWrap.style.display = 'none';
+                        wRap.classList.remove('is-stand');
+                        wRap.classList.add('is-active');
+                    };
+                }
+                const btnClose = document.querySelector('.btn-next-end');
+                btnClose.addEventListener('click',selfclose);
+                function selfclose(){
+                    alert('튜토리얼을 종료합니다');
+                    wRap.style.display = 'none';
+                }
+            });
+        })()        
+    </script>   
+    <!-- <script src="../../../assets/js/script.js"></script> -->
 </body>
 </html>

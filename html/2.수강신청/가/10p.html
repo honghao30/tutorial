@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
 </head>
 <body>
-    <div class="tutorial__wrap is-stand">
+    <div class="tutorial__wrap is-active" id="stage01">
         <div class="tooltip__area--bottom">
             <div class="logo__wrap--left">
                 <img src="../../../assets/images/logo.jpg" alt="KCA 로고">
@@ -20,7 +20,7 @@
     메인 화면의 자격취득교육 접수 클릭
                 </div>
                 <div class="btn-confirm__blue-btn">
-                    <a href="#" class="btn__blue-type btn-multi-event">확인</a>
+                    <a href="#" class="btn__blue-type btn-next-stage01">확인</a>
                 </div>
             </div>
         </div>
@@ -40,6 +40,54 @@
 
         <img src="../../../assets/images/10-1p.jpg" alt="방법1. KCA 국가기술자격검정 홈페이지(www.cq.or.kr) 메인 화면의 자격취득교육 접수 클">
     </div>
-    <script src="../../../assets/js/script.js"></script>
+    <div class="tutorial__wrap" id="stage02" style="display: none;">
+        <div class="tooltip__area--bottom stage2-tip">
+            <div class="logo__wrap--left">
+                <img src="../../../assets/images/logo.jpg" alt="KCA 로고">
+            </div>
+            <div class="text-guide__wrap--right">
+                <div class="text-guide">
+                    방법2. 자격취득교육 홈페이지(www.cqedu.kca.kr)메인화면의 <br>
+                    수강신청하러가기 클릭
+                </div>
+                <div class="btn-confirm__blue-btn">
+                    <a href="#" class="btn__blue-type btn-next-stage02">확인</a>
+                </div>
+            </div>
+        </div>
+        <!-- 툴팁 -->
+        <a href="11p.html" class="red-link-line highlight-line1" style="width: 207px;height: 61px;left: 620px;top: 409px;">
+            <div class="cursor-pointer-wrap">
+                <div class="pointer single-elm" style="display: none;right: 5px;top: 12px;">
+                    <div class="point">&nbsp;</div>
+                    <div class="circle_wrap">
+                        <span class="circle"></span>
+                        <span class="circle2"></span>
+                        <span class="circle3"></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <img src="../../../assets/images/10-2p.jpg" alt="방법1. KCA 국가기술자격검정 홈페이지(www.cq.or.kr) 메인 화면의 자격취득교육 접수 클">
+    </div>
+    <script>       
+        const btnNextONe = document.querySelector('.btn-next-stage01');
+        const btnNextTwo = document.querySelector('.btn-next-stage02');
+        const btnClose = document.querySelector('.btn-next-end');
+        const tooltipWrap = document.querySelector('.stage2-tip');
+        btnNextONe.addEventListener('click',nextstg);
+        function nextstg(){
+            document.getElementById('stage01').style.display = 'none';
+            document.getElementById('stage02').style.display = 'block';
+        }
+        btnNextTwo.addEventListener('click',stageopen);
+        function stageopen(){
+            tooltipWrap.style.display = 'none';            
+            document.getElementById('stage02').classList.remove('is-stand');
+            document.getElementById('stage02').classList.add('is-active');
+        }
+    </script>
+    <!-- <script src="../../../assets/js/script.js"></script> -->
 </body>
 </html>

@@ -16,10 +16,7 @@
             </div>
             <div class="text-guide__wrap--right">
                 <div class="text-guide ft16">
-                   <ul>
-                       <li> 1. 접수가 완료되었음을 확인합니다.</li>
-                       <li>2. 접수증이 필요하신 경우 [접수증 출력]을 클릭해주세</li>
-                    </ul>
+                    결제 완료 후 “접수가 완료되었다”는 화면을 확인합니다.
 
                 </div>
                 <div class="btn-confirm__blue-btn">
@@ -43,6 +40,35 @@
 
         <img src="../../../assets/images/22p.jpg" alt="접수하기">
     </div>
-    <script src="../../../assets/js/script.js"></script>
+    <script>        
+
+        (function () {
+            document.addEventListener('DOMContentLoaded',function(){  
+                var array = [                                
+                    '접수증이 필요하신 경우 [접수증 출력]을 클릭해주세요.'            
+                ];        
+                let c = 0;
+                let clc = 0; 
+                const msgbox = document.querySelector('.text-guide');
+                const btnNext = document.querySelector('.btn__blue-type');
+                const tooltipWrap = document.querySelector('.tooltip__area--bottom');
+                const wRap = document.querySelector('.tutorial__wrap');
+                btnNext.addEventListener('click',myFunction);
+                function myFunction(e) {
+                    e.preventDefault();
+                                             
+                    if (c < array.length) {                
+                        //newArr.push(array[c++])                
+                        msgbox.innerHTML = array[c++];        
+                    } else{
+                        tooltipWrap.style.display = 'none';
+                        wRap.classList.remove('is-stand');
+                        wRap.classList.add('is-active');
+                    };
+                }
+            });
+        })()        
+    </script>
+    <!-- <script src="../../../assets/js/script.js"></script> -->
 </body>
 </html>

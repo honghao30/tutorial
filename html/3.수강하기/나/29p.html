@@ -16,12 +16,7 @@
             </div>
             <div class="text-guide__wrap--right">
                 <div class="text-guide ft16">
-                   <ul>
-                       <li>1. 아이디, 비밀번호를 입력 후 [로그인]을 클릭합니다.</li>
-                       <li> 2. 카메라 접근 권한을 허용합니다.</li>
-                       <li>3. [사진찍기]를 클릭해 사진촬영을 진행합니다.(촬영대신 일반 사진파일은 이용할 수</li>
-                    </ul>
-
+                    아이디, 비밀번호를 입력 후 [로그인]을 클릭합니다.
                 </div>
                 <div class="btn-confirm__blue-btn">
                     <a href="30p.html" class="btn__blue-type btn-multi-event">확인</a>
@@ -54,7 +49,7 @@
                 </div>
             </div> -->
         </div>
-        <div class="red-link-line highlight-line3" style="width: 89px;height: 30px;left: 488px;top: 439px;">
+        <div class="red-link-line highlight-line3" style="width: 89px;height: 30px;left: 488px;top: 439px;display: none;">
             <!-- <div class="cursor-pointer-wrap">
                 <div class="pointer" style="display: none;">
                     <div class="point">&nbsp;</div>
@@ -66,7 +61,7 @@
                 </div>
             </div> -->
         </div>
-        <a href="30p.html" class="red-link-line highlight-line4" style="width: 165px;height: 171px;left: 668px;top: 367px;">
+        <a href="30p.html" class="red-link-line highlight-line4" style="width: 165px;height: 171px;left: 668px;top: 367px;display: none;">
             <div class="cursor-pointer-wrap">
                 <div class="pointer" style="display: none;right: 35px;top: 95px;">
                     <div class="point">&nbsp;</div>
@@ -81,6 +76,43 @@
 
         <img src="../../../assets/images/29p.jpg" alt="방법1. 컴퓨터에 카메라가 없는 경우(스마트폰 이용)">
     </div>
-    <script src="../../../assets/js/script.js"></script>
+    <!-- <script src="../../../assets/js/script.js"></script> -->
+    <script>    
+        (function () {
+            document.addEventListener('DOMContentLoaded',function(){  
+                var array = [                                
+                    '카메라 접근 권한을 허용합니다.',
+                    '[사진찍기]를 클릭해 사진촬영을 진행합니다.(촬영대신 일반 사진파일은 이용할 수 없습니다.'       
+                ];        
+                let c = 0;
+                let clc = 2; 
+                const msgbox = document.querySelector('.text-guide');
+                const btnNext = document.querySelector('.btn__blue-type');
+                const tooltipWrap = document.querySelector('.tooltip__area--bottom');
+                const wRap = document.querySelector('.tutorial__wrap');
+                const RedLine = document.querySelectorAll('.red-link-line');
+                btnNext.addEventListener('click',myFunction);
+                function myFunction(e) {
+                    e.preventDefault();
+                                             
+                    if (c < array.length) {                
+                        //newArr.push(array[c++])                
+                        msgbox.innerHTML = array[c++];       
+                        RedLine[clc++].style.display = 'block'; 
+                    } else{
+                        tooltipWrap.style.display = 'none';
+                        wRap.classList.remove('is-stand');
+                        wRap.classList.add('is-active');
+                    };
+                }
+                // const btnClose = document.querySelector('.btn-next-end');
+                // btnClose.addEventListener('click',selfclose);
+                // function selfclose(){
+                //     alert('튜토리얼을 종료합니다');
+                //     wRap.style.display = 'none';
+                // }
+            });
+        })()        
+    </script>
 </body>
 </html>

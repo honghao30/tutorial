@@ -16,12 +16,7 @@
             </div>
             <div class="text-guide__wrap--right">
                 <div class="text-guide ft16">
-                   <ul>
-                       <li>1. 온라인취득교육 학습 전 본인인증을 진행하는 단계입니다.</li>
-                       <li>2. 컴퓨터에 카메라가 없는 경우, 안면인식은 QR코드를 이용해<br> 스마트폰에서 안면인식을 진행합니다.</li>
-                       <li>3. 휴대폰의 카메라를 실행하고 QR코드를 화면에 비친 후 안내팝업<br> 또는 URL이 나타나면 선택 합니다.</li>
-                    </ul>
-
+                    온라인취득교육 학습 전 본인인증을 진행하는 단계입니다.
                 </div>
                 <div class="btn-confirm__blue-btn">
                     <a href="29p.html" class="btn__blue-type btn-multi-event">확인</a>
@@ -57,6 +52,43 @@
 
         <img src="../../../assets/images/28p.jpg" alt="2. 학습하기">
     </div>
-    <script src="../../../assets/js/script.js"></script>
+    <script>    
+        (function () {
+            document.addEventListener('DOMContentLoaded',function(){  
+                var array = [                                
+                    '컴퓨터에 카메라가 없는 경우, 안면인식은 QR코드를 이용해<br> 스마트폰에서 안면인식을 진행합니다.',
+                    '휴대폰의 카메라를 실행하고 QR코드를 화면에 비친 후 안내팝업<br> 또는 URL이 나타나면 선택 합니다.'       
+                ];        
+                let c = 0;
+                let clc = 1; 
+                const msgbox = document.querySelector('.text-guide');
+                const btnNext = document.querySelector('.btn__blue-type');
+                const tooltipWrap = document.querySelector('.tooltip__area--bottom');
+                const wRap = document.querySelector('.tutorial__wrap');
+                const RedLine = document.querySelectorAll('.red-link-line');
+                btnNext.addEventListener('click',myFunction);
+                function myFunction(e) {
+                    e.preventDefault();
+                                             
+                    if (c < array.length) {                
+                        //newArr.push(array[c++])                
+                        msgbox.innerHTML = array[c++];       
+                        RedLine[clc++].style.display = 'block'; 
+                    } else{
+                        tooltipWrap.style.display = 'none';
+                        wRap.classList.remove('is-stand');
+                        wRap.classList.add('is-active');
+                    };
+                }
+                // const btnClose = document.querySelector('.btn-next-end');
+                // btnClose.addEventListener('click',selfclose);
+                // function selfclose(){
+                //     alert('튜토리얼을 종료합니다');
+                //     wRap.style.display = 'none';
+                // }
+            });
+        })()        
+    </script>
+    <!-- <script src="../../../assets/js/script.js"></script> -->
 </body>
 </html>
