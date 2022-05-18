@@ -16,11 +16,7 @@
             </div>
             <div class="text-guide__wrap--right">
                 <div class="text-guide ft16">
-                    <ul>
-                        <li> 1. 묻고답하기 게시판은 [고객지원-묻고답하기-문의하기]를 클릭합니다.</li>
-                        <li>2. 제목, 분류, 내용을 작성 후 저장버튼을 클릭합니다.</li>
-                    </ul>
-
+                    묻고답하기 게시판은 [고객지원-묻고답하기-문의하기]를 클릭합니다.
                 </div>
                 <div class="btn-confirm__blue-btn">
                     <a href="48-2p.html" class="btn__blue-type btn-multi-event">확인</a>
@@ -44,6 +40,35 @@
 
         <img src="../../../assets/images/48p.jpg" alt="2. 학습하기">
     </div>
-    <script src="../../../assets/js/script.js"></script>
+    <script>    
+        (function () {
+            document.addEventListener('DOMContentLoaded',function(){  
+                // var array = [                                
+                //     '자주묻는 질문에도 없는 경우, 묻고답하기(Q&A게시판) 또는 취득교육 문의전화(1688-0013)를 통해 안내를 받을 수 있습니다.'  
+                // ];        
+                let c = 0;
+                let clc = 1; 
+                const msgbox = document.querySelector('.text-guide');
+                const btnNext = document.querySelector('.btn__blue-type');
+                const tooltipWrap = document.querySelector('.tooltip__area--bottom');
+                const wRap = document.querySelector('.tutorial__wrap');
+                const RedLine = document.querySelectorAll('.red-link-line');
+                btnNext.addEventListener('click',myFunction);
+                function myFunction(e) {
+                    e.preventDefault();
+                                             
+                    tooltipWrap.style.display = 'none';
+                    wRap.classList.remove('is-stand');
+                    wRap.classList.add('is-active');
+                }
+                // const btnClose = document.querySelector('.btn-next-end');
+                // btnClose.addEventListener('click',selfclose);
+                // function selfclose(){
+                //     alert('튜토리얼을 종료합니다');
+                //     wRap.style.display = 'none';
+                // }
+            });
+        })()        
+    </script>       
 </body>
 </html>

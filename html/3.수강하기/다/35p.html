@@ -16,12 +16,7 @@
             </div>
             <div class="text-guide__wrap--right">
                 <div class="text-guide ft16">
-                   <ul>
-                        <li>1.  회차평가 및 성취도평가를 완료하면 해당과목의 학습이 종료됩니다.</li>
-                        <li>2. 성취도평가는 60점 이상이 합격 기준이며, 60점 미만일 경우 <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;재응시가 필요합니다.</li>
-                    </ul>
-
+                    회차평가 및 성취도평가를 완료하면 해당과목의 학습이 종료됩니다.
                 </div>
                 <div class="btn-confirm__blue-btn">
                     <a href="#" class="btn__blue-type  btn-multi-event">확인</a>
@@ -29,19 +24,7 @@
             </div>
         </div>p
         <!-- 툴팁 -->
-        <a href="36p.html" class="red-link-line highlight-line1" style="width: 71px;height: 38px;left: 235px;top: 198px;">
-            <div class="cursor-pointer-wrap">
-                <div class="pointer" style="display: none;right: -5px;top: -15px;">
-                    <div class="point">&nbsp;</div>
-                    <div class="circle_wrap">
-                        <span class="circle"></span>
-                        <span class="circle2"></span>
-                        <span class="circle3"></span>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="36p.html" class="red-link-line highlight-line2" style="width: 83px;height: 38px;left: 235px;top: 415px;">
+        <a href="35-2p.html" class="red-link-line highlight-line1" style="width: 71px;height: 38px;left: 235px;top: 308px;">
             <div class="cursor-pointer-wrap">
                 <div class="pointer" style="display: none;right: -5px;top: -15px;">
                     <div class="point">&nbsp;</div>
@@ -54,8 +37,44 @@
             </div>
         </a>
 
+
         <img src="../../../assets/images/35p.jpg" alt="2. 학습하기">
     </div>
-    <script src="../../../assets/js/script.js"></script>
+    <script>    
+        (function () {
+            document.addEventListener('DOMContentLoaded',function(){  
+                var array = [                                
+                    '성취도평가는 60점 이상이 합격 기준이며, 60점 미만일 경우 재응시가 필요합니다.'  
+                ];        
+                let c = 0;
+                let clc = 1; 
+                const msgbox = document.querySelector('.text-guide');
+                const btnNext = document.querySelector('.btn__blue-type');
+                const tooltipWrap = document.querySelector('.tooltip__area--bottom');
+                const wRap = document.querySelector('.tutorial__wrap');
+                const RedLine = document.querySelectorAll('.red-link-line');
+                btnNext.addEventListener('click',myFunction);
+                function myFunction(e) {
+                    e.preventDefault();
+                                             
+                    if (c < array.length) {                
+                        //newArr.push(array[c++])                
+                        msgbox.innerHTML = array[c++];       
+                        RedLine[clc++].style.display = 'block'; 
+                    } else{
+                        tooltipWrap.style.display = 'none';
+                        wRap.classList.remove('is-stand');
+                        wRap.classList.add('is-active');
+                    };
+                }
+                // const btnClose = document.querySelector('.btn-next-end');
+                // btnClose.addEventListener('click',selfclose);
+                // function selfclose(){
+                //     alert('튜토리얼을 종료합니다');
+                //     wRap.style.display = 'none';
+                // }
+            });
+        })()        
+    </script>  
 </body>
 </html>

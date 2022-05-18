@@ -16,13 +16,7 @@
             </div>
             <div class="text-guide__wrap--right">
                 <div class="text-guide ft16">
-                   <ul>
-                       <li>
-                        1. [안면인증] 버튼을 클릭합니다.  </li>
-                        <li>2. 얼굴을 안내선 및 화면 중앙에 맞춘 후 [안면인증] 버튼을 클릭합니다.  </li>
-                        <li>3. 인증실패시 실패 화면에서의 2번째 메뉴인 [모바일인증] 버튼을 클릭합니다.
-                        </li>
-                    </ul>
+                    [안면인증] 버튼을 클릭합니다. 
 
                 </div>
                 <div class="btn-confirm__blue-btn">
@@ -60,6 +54,42 @@
 
         <img src="../../../assets/images/31p.jpg" alt="방법2. 컴퓨터에 카메라가 설치된 경우">
     </div>
-    <script src="../../../assets/js/script.js"></script>
+    <script>    
+        (function () {
+            document.addEventListener('DOMContentLoaded',function(){  
+                var array = [                                
+                    '얼굴을 안내선 및 화면 중앙에 맞춘 후 [안면인증] 버튼을 클릭합니다.',
+                    '인증실패시 실패 화면에서의 2번째 메뉴인 [모바일인증] 버튼을 클릭합니다.'       
+                ];        
+                let c = 0;
+                let clc = 1; 
+                const msgbox = document.querySelector('.text-guide');
+                const btnNext = document.querySelector('.btn__blue-type');
+                const tooltipWrap = document.querySelector('.tooltip__area--bottom');
+                const wRap = document.querySelector('.tutorial__wrap');
+                const RedLine = document.querySelectorAll('.red-link-line');
+                btnNext.addEventListener('click',myFunction);
+                function myFunction(e) {
+                    e.preventDefault();
+                                             
+                    if (c < array.length) {                
+                        //newArr.push(array[c++])                
+                        msgbox.innerHTML = array[c++];       
+                        RedLine[clc++].style.display = 'block'; 
+                    } else{
+                        tooltipWrap.style.display = 'none';
+                        wRap.classList.remove('is-stand');
+                        wRap.classList.add('is-active');
+                    };
+                }
+                // const btnClose = document.querySelector('.btn-next-end');
+                // btnClose.addEventListener('click',selfclose);
+                // function selfclose(){
+                //     alert('튜토리얼을 종료합니다');
+                //     wRap.style.display = 'none';
+                // }
+            });
+        })()        
+    </script>
 </body>
 </html>

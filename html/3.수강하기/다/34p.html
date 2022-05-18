@@ -16,53 +16,16 @@
             </div>
             <div class="text-guide__wrap--right">
                 <div class="text-guide ft16">
-                   <ul>
-                       <li>1.  학습메뉴: 학습 목차 및 진행현황을 확인할 수 있습니다.<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;[학습 TOOL] 선택시 아래의 메뉴가 나타납니다.</li>
-                        <li>2. 강사소개: 강사정보를 확인할 수 있습니다. </li>
-                        <li>3. 화면구성: 화면의 메뉴구성에 대한 설명을 확인할 수 있습니다.</li>
-                    </ul>
+                    학습메뉴: 학습 목차 및 진행현황을 확인할 수 있습니다.<br>
+                    [학습 TOOL] 선택시 아래의 메뉴가 나타납니다.
                 </div>
-                <div class="text-guide ft16" style="display: none;">
-                    <ul>
-                         <li>4. 학습자료: 강의 내용이 담긴 학습자료를 다운로드 받을 수 있습니다.</li>
-                         <li>5. 필요사양: 학습에 필요한 환경(조건 및 필요 컴퓨터 사양 등)을<br>
-                             &nbsp;&nbsp;&nbsp;&nbsp;확인할 수 있습니다.</li>
-                     </ul>
-
-                 </div>
                 <div class="btn-confirm__blue-btn">
                     <a href="#" class="btn__blue-type btn-next-step">확인</a>
-                    <a href="#" class="btn__blue-type btn-multi-event" style="display: none;">확인</a>
                 </div>
             </div>
         </div>
         <!-- 툴팁 -->
-        <div class="red-link-line highlight-line1" style="width: 615px;height: 48px;left: 185px;top: 79px;">
-            <!-- <div class="cursor-pointer-wrap">
-                <div class="pointer" style="display: none;">
-                    <div class="point">&nbsp;</div>
-                    <div class="circle_wrap">
-                        <span class="circle"></span>
-                        <span class="circle2"></span>
-                        <span class="circle3"></span>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="red-link-line highlight-line2" style="width: 135px;height: 29px;left: 426px;top: 131px;">
-            <!-- <div class="cursor-pointer-wrap">
-                <div class="pointer" style="display: none;">
-                    <div class="point">&nbsp;</div>
-                    <div class="circle_wrap">
-                        <span class="circle"></span>
-                        <span class="circle2"></span>
-                        <span class="circle3"></span>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <a href="35p.html" class="red-link-line highlight-line3" style="width: 50px;height: 123px;left: 204px;top: 166px;">
+        <a href="36p.html" class="red-link-line highlight-line1" style="width: 50px;height: 123px;left: 204px;top: 166px;">
             <div class="cursor-pointer-wrap">
                 <div class="pointer" style="display: none;right: -5px;">
                     <div class="point">&nbsp;</div>
@@ -74,8 +37,72 @@
                 </div>
             </div>
         </a>
+        <div class="red-link-line highlight-line2" style="width: 135px;height: 29px;left: 426px;top: 131px;display: none;">
+            <!-- <div class="cursor-pointer-wrap">
+                <div class="pointer" style="display: none;">
+                    <div class="point">&nbsp;</div>
+                    <div class="circle_wrap">
+                        <span class="circle"></span>
+                        <span class="circle2"></span>
+                        <span class="circle3"></span>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="red-link-line highlight-line3" style="width: 615px;height: 48px;left: 185px;top: 79px;display: none;">
+            <!-- <div class="cursor-pointer-wrap">
+                <div class="pointer" style="display: none;">
+                    <div class="point">&nbsp;</div>
+                    <div class="circle_wrap">
+                        <span class="circle"></span>
+                        <span class="circle2"></span>
+                        <span class="circle3"></span>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+
         <img src="../../../assets/images/33p.jpg" alt="2. 학습하기">
     </div>
-    <script src="../../../assets/js/script.js"></script>
+    <script>    
+        (function () {
+            document.addEventListener('DOMContentLoaded',function(){  
+                var array = [                                
+                    '강사소개: 강사정보를 확인할 수 있습니다.',
+                    '화면구성: 화면의 메뉴구성에 대한 설명을 확인할 수 있습니다.',
+                    '학습자료: 강의 내용이 담긴 학습자료를 다운로드 받을 수 있습니다.',
+                    '필요사양: 학습에 필요한 환경(조건 및 필요 컴퓨터 사양 등)을<br>확인할 수 있습니다.'  
+                ];        
+                let c = 0;
+                let clc = 1; 
+                const msgbox = document.querySelector('.text-guide');
+                const btnNext = document.querySelector('.btn__blue-type');
+                const tooltipWrap = document.querySelector('.tooltip__area--bottom');
+                const wRap = document.querySelector('.tutorial__wrap');
+                const RedLine = document.querySelectorAll('.red-link-line');
+                btnNext.addEventListener('click',myFunction);
+                function myFunction(e) {
+                    e.preventDefault();
+                                             
+                    if (c < array.length) {                
+                        //newArr.push(array[c++])                
+                        msgbox.innerHTML = array[c++];       
+                        RedLine[clc++].style.display = 'block'; 
+                    } else{
+                        tooltipWrap.style.display = 'none';
+                        wRap.classList.remove('is-stand');
+                        wRap.classList.add('is-active');
+                    };
+                }
+                // const btnClose = document.querySelector('.btn-next-end');
+                // btnClose.addEventListener('click',selfclose);
+                // function selfclose(){
+                //     alert('튜토리얼을 종료합니다');
+                //     wRap.style.display = 'none';
+                // }
+            });
+        })()        
+    </script>    
 </body>
 </html>
