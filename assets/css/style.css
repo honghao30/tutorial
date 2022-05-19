@@ -31,7 +31,7 @@
 .logo__wrap--left::after {content: "";display: block;position: absolute;width: 5px;height:110px;right:0;top:17px;background-color: #2a71b9;border-radius: 6px;}
 .text-guide__wrap--right {position:relative;display:table-cell;vertical-align: middle;padding:0 17px 0 46px}
 .text-guide__wrap--right  .text-guide {font-size: 18px;color:#000;word-break: keep-all;max-width: 80%;}
-.text-guide__wrap--right  .text-guide strong {font-weight: bold;display: block;}
+.text-guide__wrap--right  .text-guide strong {font-weight: bold;}
 .text-guide__wrap--right  .text-guide p {font-size: 14px;line-height: 26px;margin-top:25px;}
 .text-guide__wrap--right  .text-guide li {font-size: 18px;font-weight:bold;line-height: 26px;}
 .text-guide__wrap--right  .text-guide.ft16  li {font-size: 16px !important;}
@@ -70,7 +70,7 @@
     right: 0;
     animation: border 2s 1s infinite, borderColor 2s 1s infinite;
   }
-  
+
   @keyframes border {
     0% {
       width: 0;
