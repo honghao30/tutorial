@@ -71,6 +71,7 @@
                 btnClose.addEventListener('click',selfclose);
                 function selfclose(){
                     alert('튜토리얼을 종료합니다');
+                    window.open('','_self').close();
                     wRap.style.display = 'none';
                 }
             });
