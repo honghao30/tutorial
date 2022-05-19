@@ -15,7 +15,7 @@
                 <img src="../../../assets/images/logo.jpg" alt="KCA 로고">
             </div>
             <div class="text-guide__wrap--right">
-                <div class="text-guide ft16">
+                <div class="text-guide">
                     아이디, 비밀번호를 입력 후 [로그인]을 클릭합니다.
                 </div>
                 <div class="btn-confirm__blue-btn">
@@ -77,15 +77,15 @@
         <img src="../../../assets/images/29p.jpg" alt="방법1. 컴퓨터에 카메라가 없는 경우(스마트폰 이용)">
     </div>
     <!-- <script src="../../../assets/js/script.js"></script> -->
-    <script>    
+    <script>
         (function () {
-            document.addEventListener('DOMContentLoaded',function(){  
-                var array = [                                
+            document.addEventListener('DOMContentLoaded',function(){
+                var array = [
                     '카메라 접근 권한을 허용합니다.',
-                    '[사진찍기]를 클릭해 사진촬영을 진행합니다.(촬영대신 일반 사진파일은 이용할 수 없습니다.'       
-                ];        
+                    '[사진찍기]를 클릭해 사진촬영을 진행합니다.(촬영대신 일반 사진파일은 이용할 수 없습니다.'
+                ];
                 let c = 0;
-                let clc = 2; 
+                let clc = 2;
                 const msgbox = document.querySelector('.text-guide');
                 const btnNext = document.querySelector('.btn__blue-type');
                 const tooltipWrap = document.querySelector('.tooltip__area--bottom');
@@ -94,11 +94,11 @@
                 btnNext.addEventListener('click',myFunction);
                 function myFunction(e) {
                     e.preventDefault();
-                                             
-                    if (c < array.length) {                
-                        //newArr.push(array[c++])                
-                        msgbox.innerHTML = array[c++];       
-                        RedLine[clc++].style.display = 'block'; 
+
+                    if (c < array.length) {
+                        //newArr.push(array[c++])
+                        msgbox.innerHTML = array[c++];
+                        RedLine[clc++].style.display = 'block';
                     } else{
                         tooltipWrap.style.display = 'none';
                         wRap.classList.remove('is-stand');
@@ -112,7 +112,7 @@
                 //     wRap.style.display = 'none';
                 // }
             });
-        })()        
+        })()
     </script>
 </body>
 </html>

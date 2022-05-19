@@ -15,7 +15,7 @@
                 <img src="../../../assets/images/logo.jpg" alt="KCA 로고">
             </div>
             <div class="text-guide__wrap--right">
-                <div class="text-guide ft16">
+                <div class="text-guide">
                     아이디, 비밀번호를 입력 후 로그인을 진행합니다.(CQ홈페이지 가입시 등록한 아이디, 비밀번호)
                 </div>
                 <div class="btn-confirm__blue-btn">
@@ -74,16 +74,16 @@
         </a>
         <img src="../../../assets/images/16p.jpg" alt="방법1. 컴퓨터에 카메라가 없는 경우(스마트폰 이용">
     </div>
-    <script> 
+    <script>
         (function () {
-            document.addEventListener('DOMContentLoaded',function(){  
-                var array = [                                
-                    '카메라 접근 권한을 허용합니다.',            
+            document.addEventListener('DOMContentLoaded',function(){
+                var array = [
+                    '카메라 접근 권한을 허용합니다.',
                     '사진을 촬영합니다(사진파일을 등록하거나 사진을 촬영하여 등록할 수 없습니다.)',
                     '접수중인 화면에서 사진이 등록되었음을 확인합니다.'
-                ];        
+                ];
                 let c = 0;
-                let clc = 2; 
+                let clc = 2;
                 const msgbox = document.querySelector('.text-guide');
                 const btnNext = document.querySelector('.btn__blue-type');
                 const tooltipWrap = document.querySelector('.tooltip__area--bottom');
@@ -92,10 +92,10 @@
                 btnNext.addEventListener('click',myFunction);
                 function myFunction(e) {
                     e.preventDefault();
-                                             
-                    if (c < array.length) {                
-                        //newArr.push(array[c++])                
-                        msgbox.innerHTML = array[c++];        
+
+                    if (c < array.length) {
+                        //newArr.push(array[c++])
+                        msgbox.innerHTML = array[c++];
                         RedLine[clc++].style.display = 'block';
                     } else{
                         tooltipWrap.style.display = 'none';
@@ -110,8 +110,8 @@
                     wRap.style.display = 'none';
                 }
             });
-        })()        
-    </script>      
+        })()
+    </script>
     <!-- <script src="../../../assets/js/script.js"></script> -->
 </body>
 </html>

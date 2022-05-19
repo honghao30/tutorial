@@ -15,16 +15,16 @@
                 <img src="../../../assets/images/logo.jpg" alt="KCA 로고">
             </div>
             <div class="text-guide__wrap--right">
-                <div class="text-guide ft16">
+                <div class="text-guide">
                     CQ홈페이지의 메인 화면의 자격증 발급 또는 <br> [CQ홈페이지-자격증/확인서자격증발급-자격증발급신청]을 클릭합니다.
-                  
+
                 </div>
                 <div class="btn-confirm__blue-btn">
                     <a href="39p.html" class="btn__blue-type  btn-multi-event">확인</a>
                 </div>
             </div>
         </div>
-        <!-- 툴팁 -->        
+        <!-- 툴팁 -->
         <a href="38-2p.html" class="red-link-line highlight-line1" style="width: 124px;height: 44px;left: 486px;top: 79px;">
             <div class="cursor-pointer-wrap">
                 <div class="pointer" style="display: none;right: 5px;top: 5px;">
@@ -49,17 +49,17 @@
                 </div>
             </div>
         </a>
-                     
+
         <img src="../../../assets/images/38p.jpg" alt="2. 학습하기">
     </div>
-    <script>    
+    <script>
         (function () {
-            document.addEventListener('DOMContentLoaded',function(){  
-                var array = [                                
-                    '접수절차를 확인하고 아래의 [자격증발급 신청]을 클릭합니다.'  
-                ];        
+            document.addEventListener('DOMContentLoaded',function(){
+                var array = [
+                    '접수절차를 확인하고 아래의 [자격증발급 신청]을 클릭합니다.'
+                ];
                 let c = 0;
-                let clc = 1; 
+                let clc = 1;
                 const msgbox = document.querySelector('.text-guide');
                 const btnNext = document.querySelector('.btn__blue-type');
                 const tooltipWrap = document.querySelector('.tooltip__area--bottom');
@@ -68,11 +68,11 @@
                 btnNext.addEventListener('click',myFunction);
                 function myFunction(e) {
                     e.preventDefault();
-                                             
-                    if (c < array.length) {                
-                        //newArr.push(array[c++])                
-                        msgbox.innerHTML = array[c++];       
-                        RedLine[clc++].style.display = 'block'; 
+
+                    if (c < array.length) {
+                        //newArr.push(array[c++])
+                        msgbox.innerHTML = array[c++];
+                        RedLine[clc++].style.display = 'block';
                     } else{
                         tooltipWrap.style.display = 'none';
                         wRap.classList.remove('is-stand');
@@ -86,7 +86,7 @@
                 //     wRap.style.display = 'none';
                 // }
             });
-        })()        
-    </script>    
+        })()
+    </script>
 </body>
 </html>

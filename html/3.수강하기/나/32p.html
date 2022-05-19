@@ -15,7 +15,7 @@
                 <img src="../../../assets/images/logo.jpg" alt="KCA 로고">
             </div>
             <div class="text-guide__wrap--right">
-                <div class="text-guide ft16">
+                <div class="text-guide">
                     통신사, 개인정보이용동의여부, PASS로 인증(어플) 또는 <br>
                         [문자(SMS)로 인증하기]를 선택합니다.
 
@@ -102,15 +102,15 @@
         </a>
         <img src="../../../assets/images/32p.jpg" alt="※ 안면인식을 통한 본인인증 실패시(모바일 PASS 인증)">
     </div>
-    <script>    
+    <script>
         (function () {
-            document.addEventListener('DOMContentLoaded',function(){  
-                var array = [                                
+            document.addEventListener('DOMContentLoaded',function(){
+                var array = [
                     '문자(SMS)로 인증을 선택한 경우, 정보 및 보안문자를<br>입력하시고 [확인] 버튼을 클릭해주세요.' ,
-                    '휴대폰으로 전송된 문자메시지의 인증번호 6자리를 입력하고 확인버튼을 클릭해주세요.'     
-                ];        
+                    '휴대폰으로 전송된 문자메시지의 인증번호 6자리를 입력하고 확인버튼을 클릭해주세요.'
+                ];
                 let c = 0;
-                let clc = 1; 
+                let clc = 1;
                 const msgbox = document.querySelector('.text-guide');
                 const btnStep01 = document.querySelector('.btn-next-step01');
                 const btnStep02 = document.querySelector('.btn-next-step02');
@@ -119,42 +119,42 @@
                 const tooltipWrap = document.querySelector('.tooltip__area--bottom');
                 const wRap = document.querySelector('.tutorial__wrap');
                 const RedLine = document.querySelectorAll('.red-link-line');
-                
+
                 btnStep01.addEventListener('click',() =>{
                     btnStep01.style.display = 'none';
-                    btnStep02.style.display = 'block';                    
+                    btnStep02.style.display = 'block';
                     document.querySelector('.highlight-line3').style.display = 'block';
                     document.querySelector('.highlight-line4').style.display = 'block';
-                    msgbox.innerHTML = array[0];     
+                    msgbox.innerHTML = array[0];
                 })
                 btnStep02.addEventListener('click',() =>{
                     btnStep02.style.display = 'none';
-                    btnStep03.style.display = 'block';                    
+                    btnStep03.style.display = 'block';
                     document.querySelector('.highlight-line5').style.display = 'block';
                     document.querySelector('.highlight-line6').style.display = 'block';
-                    msgbox.innerHTML = array[1];     
-                })                
+                    msgbox.innerHTML = array[1];
+                })
                 btnStep03.addEventListener('click',() =>{
-                    btnStep03.style.display = 'none';                    
+                    btnStep03.style.display = 'none';
                     tooltipWrap.style.display = 'none';
                     wRap.classList.remove('is-stand');
                     wRap.classList.add('is-active');
-                })                 
+                })
                 const btnClose = document.querySelector('.btn-next-end');
                 btnClose.addEventListener('click',selfclose);
                 function selfclose(){
                     alert('튜토리얼을 종료합니다');
                     wRap.style.display = 'none';
-                }                
-                
+                }
+
                 // btnNext.addEventListener('click',myFunction);
                 // function myFunction(e) {
                 //     e.preventDefault();
-                                             
-                //     if (c < array.length) {                
-                //         //newArr.push(array[c++])                
-                //         msgbox.innerHTML = array[c++];       
-                //         RedLine[clc++].style.display = 'block'; 
+
+                //     if (c < array.length) {
+                //         //newArr.push(array[c++])
+                //         msgbox.innerHTML = array[c++];
+                //         RedLine[clc++].style.display = 'block';
                 //     } else{
                 //         tooltipWrap.style.display = 'none';
                 //         wRap.classList.remove('is-stand');
@@ -168,7 +168,7 @@
                 //     wRap.style.display = 'none';
                 // }
             });
-        })()        
+        })()
     </script>
 </body>
 </html>

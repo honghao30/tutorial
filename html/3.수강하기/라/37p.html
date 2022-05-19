@@ -15,15 +15,11 @@
                 <img src="../../../assets/images/logo.jpg" alt="KCA 로고">
             </div>
             <div class="text-guide__wrap--right">
-                <div class="text-guide ft16">
+                <div class="text-guide">
                     학습현황은 진도율, 성취도평가여부, 교육만족도 조사 여부 이수 등을<br> 확인 할 수 있는 메뉴입니다.
                 </div>
-                <div class="text-guide ft16" style="display: none;">
-                    <ul>
-                         <li</li>
-                             <li></li>
-                             <li>5. 자세한 자격증 발급 방법은 CQ체험하기의 "자격증<br> 발급신청" 게시물을 확인하시기 바랍니다.</li>
-                     </ul>
+                <div class="text-guide " style="display: none;">
+                    자세한 자격증 발급 방법은 CQ체험하기의 "자격증<br> 발급신청" 게시물을 확인하시기 바랍니다.
                  </div>
                 <div class="btn-confirm__blue-btn">
                     <a href="#" class="btn__blue-type btn-next-step">확인</a>
@@ -59,17 +55,17 @@
 
         <img src="../../../assets/images/37p.jpg" alt="2. 학습하기">
     </div>
-    <script>    
+    <script>
         (function () {
-            document.addEventListener('DOMContentLoaded',function(){  
-                var array = [                                
+            document.addEventListener('DOMContentLoaded',function(){
+                var array = [
                     '모든 강의의 수강완료, 성취도평가 및 교육 만족도 조사가 완료되어야<br>  교육이 이수됩니다.<br>(완료되지 않은 항목이 있는 경우, 교육수강에서 해당부분을 <br>확인한 뒤 완료해야합니다.)',
                     '교육이수가 확인될 경우, 자격증 신청이 가능합니다.<br>(제한급, 항공전과목 면제 대상 한정)',
                     '자격증 발급을 원하는 경우 [자격증 발급 하러 가기]<br>CQ홈페이지(www.cq.or.kr) 또는 지방본부 내방을 통해 가능합니다.',
-                    '자세한 자격증 발급 방법은 CQ체험하기의 “자격증 발급신청” 게시물을 확인하시기 바랍니다.'  
-                ];        
+                    '자세한 자격증 발급 방법은 CQ체험하기의 “자격증 발급신청” 게시물을 확인하시기 바랍니다.'
+                ];
                 let c = 0;
-                let clc = 1; 
+                let clc = 1;
                 const msgbox = document.querySelector('.text-guide');
                 const btnNext = document.querySelector('.btn__blue-type');
                 const tooltipWrap = document.querySelector('.tooltip__area--bottom');
@@ -78,11 +74,11 @@
                 btnNext.addEventListener('click',myFunction);
                 function myFunction(e) {
                     e.preventDefault();
-                                             
-                    if (c < array.length) {                
-                        //newArr.push(array[c++])                
-                        msgbox.innerHTML = array[c++];       
-                        RedLine[clc++].style.display = 'block'; 
+
+                    if (c < array.length) {
+                        //newArr.push(array[c++])
+                        msgbox.innerHTML = array[c++];
+                        RedLine[clc++].style.display = 'block';
                     } else{
                         tooltipWrap.style.display = 'none';
                         wRap.classList.remove('is-stand');
@@ -96,7 +92,7 @@
                     wRap.style.display = 'none';
                 }
             });
-        })()        
-    </script>  
+        })()
+    </script>
 </body>
 </html>

@@ -15,7 +15,7 @@
                 <img src="../../../assets/images/logo.jpg" alt="KCA 로고">
             </div>
             <div class="text-guide__wrap--right">
-                <div class="text-guide ft16">
+                <div class="text-guide">
                     온라인자격취득교육 메인 홈페이지에 접속합니다.
                 </div>
                 <div class="btn-confirm__blue-btn">
@@ -40,15 +40,15 @@
 
         <img src="../../../assets/images/27p.jpg" alt="2. 학습하기">
     </div>
-    <script>    
+    <script>
         (function () {
-            document.addEventListener('DOMContentLoaded',function(){  
-                var array = [                                
+            document.addEventListener('DOMContentLoaded',function(){
+                var array = [
                     '수강신청한 과목명, 교육기간을 확인합니다.<br>(신청하신 정보와 다를 경우 [CQ홈페이지-마이페이지<br>원서접수내역-교육접수내역-접수취소]를 진행해주시기 바랍니다.)',
-                    '[학습하기] 버튼을 클릭합니다.'       
-                ];        
+                    '[학습하기] 버튼을 클릭합니다.'
+                ];
                 let c = 0;
-                let clc = 1; 
+                let clc = 1;
                 const msgbox = document.querySelector('.text-guide');
                 const btnNext = document.querySelector('.btn__blue-type');
                 const tooltipWrap = document.querySelector('.tooltip__area--bottom');
@@ -57,11 +57,11 @@
                 btnNext.addEventListener('click',myFunction);
                 function myFunction(e) {
                     e.preventDefault();
-                                             
-                    if (c < array.length) {                
-                        //newArr.push(array[c++])                
-                        msgbox.innerHTML = array[c++];       
-                        RedLine[clc++].style.display = 'block'; 
+
+                    if (c < array.length) {
+                        //newArr.push(array[c++])
+                        msgbox.innerHTML = array[c++];
+                        RedLine[clc++].style.display = 'block';
                     } else{
                         tooltipWrap.style.display = 'none';
                         wRap.classList.remove('is-stand');
@@ -75,7 +75,7 @@
                 //     wRap.style.display = 'none';
                 // }
             });
-        })()        
+        })()
     </script>
     <!-- <script src="../../../assets/js/script.js"></script> -->
 </body>
