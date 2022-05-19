@@ -14,13 +14,9 @@
             <div class="logo__wrap--left">
                 <img src="../../../assets/images/logo.jpg" alt="KCA 로고">
             </div>
-            <div class="text-guide__wrap--right">
+            <div class="text-guide__wrap--right" style="vertical-align: top;padding-top:20px;">
                 <div class="text-guide ft16">
-                   <ul>
-                       <li>본인인증에 성공한경우 : 컴퓨터의 QR코드 아래의 확인버튼을<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;클릭 후 강의를 수강합니다.</li>
-                    </ul>
-
+                    본인인증에 성공한경우 : 컴퓨터의 QR코드 아래의 확인버튼을 클릭 후 강의를 수강합니다.
                 </div>
                 <div class="btn-confirm__blue-btn">
                     <a href="30-2p.html" class="btn__blue-type  btn-multi-event">확인</a>
@@ -69,15 +65,15 @@
 
         <img src="../../../assets/images/30p.jpg" alt="1. 본인인증에 성공한경우 : 컴퓨터의 QR코드 아래의 확인버튼을 클릭 후 강의를 수강합니다.">
     </div>
-    <script>    
+    <script>
         (function () {
-            document.addEventListener('DOMContentLoaded',function(){  
-                // var array = [                                
+            document.addEventListener('DOMContentLoaded',function(){
+                // var array = [
                 //     '카메라 접근 권한을 허용합니다.',
-                //     '[사진찍기]를 클릭해 사진촬영을 진행합니다.(촬영대신 일반 사진파일은 이용할 수 없습니다.'       
-                // ];        
+                //     '[사진찍기]를 클릭해 사진촬영을 진행합니다.(촬영대신 일반 사진파일은 이용할 수 없습니다.'
+                // ];
                 let c = 0;
-                let clc = 1; 
+                let clc = 1;
                 const msgbox = document.querySelector('.text-guide');
                 const btnNext = document.querySelector('.btn__blue-type');
                 const tooltipWrap = document.querySelector('.tooltip__area--bottom');
@@ -86,7 +82,7 @@
                 btnNext.addEventListener('click',myFunction);
                 function myFunction(e) {
                     e.preventDefault();
-                                             
+
                     tooltipWrap.style.display = 'none';
                     wRap.classList.remove('is-stand');
                     wRap.classList.add('is-active');
@@ -98,7 +94,7 @@
                 //     wRap.style.display = 'none';
                 // }
             });
-        })()        
+        })()
     </script>
 </body>
 </html>

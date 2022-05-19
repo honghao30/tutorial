@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
 </head>
 <body>
-    <div class="tutorial__wrap is-active" id="stage01">
+    <div class="tutorial__wrap is-stand" id="stage01">
         <div class="tooltip__area--bottom">
             <div class="logo__wrap--left">
                 <img src="../../../assets/images/logo.jpg" alt="KCA 로고">
@@ -25,7 +25,7 @@
             </div>
         </div>
         <!-- 툴팁 -->
-        <a href="10-2p.html" class="red-link-line highlight-line1" style="width: 235px;height: 170px;left: 255px;top: 229px;">
+        <a href="#" class="red-link-line highlight-line1 btn-next-step" style="width: 235px;height: 170px;left: 255px;top: 229px;">
             <div class="cursor-pointer-wrap">
                 <div class="pointer single-elm" style="display: none;right: 22px;top: 50px;">
                     <div class="point">&nbsp;</div>
@@ -71,19 +71,34 @@
 
         <img src="../../../assets/images/10-2p.jpg" alt="방법1. KCA 국가기술자격검정 홈페이지(www.cq.or.kr) 메인 화면의 자격취득교육 접수 클">
     </div>
-    <script>       
+    <script>
         const btnNextONe = document.querySelector('.btn-next-stage01');
+        const btnNext2 = document.querySelector('.btn-next-step');
         const btnNextTwo = document.querySelector('.btn-next-stage02');
         const btnClose = document.querySelector('.btn-next-end');
-        const tooltipWrap = document.querySelector('.stage2-tip');
+
+        const msgbox = document.querySelector('.text-guide');
+        const btnNext = document.querySelector('.btn__blue-type');
+        const tooltipWrap = document.querySelector('.tooltip__area--bottom');
+        const wRap = document.querySelector('.tutorial__wrap');
+        const RedLine = document.querySelectorAll('.red-link-line');
         btnNextONe.addEventListener('click',nextstg);
         function nextstg(){
+            tooltipWrap.style.display = 'none';
+            wRap.classList.remove('is-stand');
+            wRap.classList.add('is-active');
+        }
+        btnNext2.addEventListener('click',stage1Act);
+
+        function stage1Act(){
             document.getElementById('stage01').style.display = 'none';
             document.getElementById('stage02').style.display = 'block';
-        }
+        };
+
         btnNextTwo.addEventListener('click',stageopen);
-        function stageopen(){
-            tooltipWrap.style.display = 'none';            
+        function stageopen(e){
+            e.preventDefault();
+            document.querySelector('.stage2-tip').style.display = 'none';
             document.getElementById('stage02').classList.remove('is-stand');
             document.getElementById('stage02').classList.add('is-active');
         }
