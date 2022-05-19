@@ -16,11 +16,7 @@
             </div>
             <div class="text-guide__wrap--right">
                 <div class="text-guide">
-                   <ul>
-                        <li>1. 자격증신청 방법은 CQ체험하기의 '4. 자격증 발급 신청'게시물을 확인하시기 바랍니다.</li>
-                            <li>2. 접수절차를 확인하고 아래의 [자격증발급 신청]을 클릭합니다.</li>
-
-                    </ul>
+                   자격증신청 방법은 CQ체험하기의 '4. 자격증 발급 신청'게시물을 확인하시기 바랍니다.
 
                 </div>
                 <div class="btn-confirm__blue-btn">
@@ -29,7 +25,7 @@
             </div>
         </div>
         <!-- 툴팁 -->
-        <a href="#" class="red-link-line highlight-line1" style="width: 124px;height: 44px;left: 486px;top: 79px;">
+        <div class="red-link-line highlight-line1" style="width: 124px;height: 44px;left: 486px;top: 79px;">
             <div class="cursor-pointer-wrap">
                 <div class="pointer" style="display: none;right: 5px;top: 5px;">
                     <div class="point">&nbsp;</div>
@@ -40,8 +36,8 @@
                     </div>
                 </div>
             </div>
-        </a>
-        <a href="#" class="red-link-line highlight-line2" style="width: 172px;height: 42px;left: 10px;top: 335px;">
+        </div>
+        <div class="red-link-line highlight-line2" style="width: 172px;height: 42px;left: 10px;top: 335px;">
             <div class="cursor-pointer-wrap">
                 <div class="pointer" style="display: none;right: 35px; top: -13px;">
                     <div class="point">&nbsp;</div>
@@ -52,8 +48,8 @@
                     </div>
                 </div>
             </div>
-        </a>
-        <a href="43p.html" class="red-link-line highlight-line2" style="width: 112px;height: 57px;left: 472px;top: 436px;">
+        </div>
+        <a href="#" class="red-link-line highlight-line2 btn-next-end" style="width: 112px;height: 57px;left: 472px;top: 436px;">
             <div class="cursor-pointer-wrap">
                 <div class="pointer" style="display: none;right: 10px; top: 9px;">
                     <div class="point">&nbsp;</div>
@@ -67,6 +63,41 @@
         </a>
         <img src="../../../assets/images/38-1p.jpg" alt="2. 학습하기">
     </div>
-    <script src="../../../assets/js/script.js"></script>
+    <script>
+        (function () {
+            document.addEventListener('DOMContentLoaded',function(){
+                var array = [
+                    '접수절차를 확인하고 아래의 [자격증발급 신청]을 클릭합니다.'
+                ];
+                let c = 0;
+                let clc = 1;
+                const msgbox = document.querySelector('.text-guide');
+                const btnNext = document.querySelector('.btn__blue-type');
+                const tooltipWrap = document.querySelector('.tooltip__area--bottom');
+                const wRap = document.querySelector('.tutorial__wrap');
+                const RedLine = document.querySelectorAll('.red-link-line');
+                btnNext.addEventListener('click',myFunction);
+                function myFunction(e) {
+                    e.preventDefault();
+
+                    if (c < array.length) {
+                        //newArr.push(array[c++])
+                        msgbox.innerHTML = array[c++];
+                        RedLine[clc++].style.display = 'block';
+                    } else{
+                        tooltipWrap.style.display = 'none';
+                        wRap.classList.remove('is-stand');
+                        wRap.classList.add('is-active');
+                    };
+                }
+                const btnClose = document.querySelector('.btn-next-end');
+                btnClose.addEventListener('click',selfclose);
+                function selfclose(){
+                    alert('튜토리얼을 종료합니다');
+                    wRap.style.display = 'none';
+                }
+            });
+        })()
+    </script>
 </body>
 </html>

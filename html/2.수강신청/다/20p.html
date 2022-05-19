@@ -16,14 +16,7 @@
             </div>
             <div class="text-guide__wrap--right">
                 <div class="text-guide">
-                   <ul>
-                       <li>1. 약관 동의여부를 확인 및 선택하고 다음 버튼을 클릭합니다.(미동의시 진행 불가)</li>
-                       <li>2. 접수한 과목과 금액을 확인합니다.</li>
-                       <li>3. 카드번호, 유효기간, 카드구분 등 정보를 빠짐없이 입력합니다.</li>
-                       <li>4. 영수증발급을 원하는 경우, 반드시 이메일을 입력하시기 바랍니다.</li>
-                       <li>5. 구매내역 동의를 선택하고, 다음버튼을 클릭합</li>
-                    </ul>
-
+                    약관 동의여부를 확인 및 선택하고 다음 버튼을 클릭합니다.<br>(미동의시 진행 불가)
                 </div>
                 <div class="btn-confirm__blue-btn">
                     <a href="21p.html" class="btn__blue-type btn-multi-event">확인</a>
@@ -43,8 +36,8 @@
                 </div>
             </div> -->
         </div>
-        <a href="#" class="red-link-line highlight-line2 show-next" style="width: 304px;height: 34px;left: 98px;top: 537px;">
-            <div class="cursor-pointer-wrap">
+        <div class="red-link-line highlight-line2 show-next" style="width: 304px;height: 34px;left: 98px;top: 537px;">
+            <!-- <div class="cursor-pointer-wrap">
                 <div class="pointer" style="display: none;right: 45px;top: -5px;">
                     <div class="point">&nbsp;</div>
                     <div class="circle_wrap">
@@ -53,8 +46,8 @@
                         <span class="circle3"></span>
                     </div>
                 </div>
-            </div>
-        </a>
+            </div> -->
+        </div>
 
         <div class="red-link-line highlight-line3" style="display:none;width: 289px; height: 202px; left: 520px; top: 270px;">
             <!-- <div class="cursor-pointer-wrap">
@@ -68,7 +61,7 @@
                 </div>
             </div> -->
         </div>
-        <a href="21p.html" class="red-link-line highlight-line4" style="display:none; width: 289px; height: 51px; right: 169px; top: 522px;">
+        <a href="#" class="red-link-line highlight-line1 btn-next-end" style="display:none; width: 289px; height: 51px; right: 169px; top: 522px;">
             <div class="cursor-pointer-wrap">
                 <div class="pointer" style="display: none;right: 45px;top: -5px;">
                     <div class="point">&nbsp;</div>
@@ -81,8 +74,47 @@
             </div>
         </a>
         <img src="../../../assets/images/5-1p.jpg" alt="">
-        <div class="inner-bg-type" style="background:url('../../../assets/images/20p.jpg') no-repeat left bottom;"> </div>
+        <div class="inner-bg-type is-show" style="background:url('../../../assets/images/20p.jpg') no-repeat left bottom;"> </div>
     </div>
-    <script src="../../../assets/js/script.js"></script>
+    <script>
+        (function () {
+            document.addEventListener('DOMContentLoaded',function(){
+                var array = [
+                    '접수한 과목과 금액을 확인합니다.',
+                    '카드번호, 유효기간, 카드구분 등 정보를 빠짐없이 입력합니다.',
+                    '영수증발급을 원하는 경우, 반드시 이메일을 입력하시기 바랍니다.',
+                    '구매내역 동의를 선택하고, 다음버튼을 클릭합니다.'
+                ];
+                let c = 0;
+                let clc = 1;
+                const halfelim = document.querySelector('.inner-bg-type');
+                const msgbox = document.querySelector('.text-guide');
+                const btnNext = document.querySelector('.btn__blue-type');
+                const tooltipWrap = document.querySelector('.tooltip__area--bottom');
+                const wRap = document.querySelector('.tutorial__wrap');
+                const RedLine = document.querySelectorAll('.red-link-line');
+                btnNext.addEventListener('click',myFunction);
+                function myFunction(e) {
+                    e.preventDefault();
+
+                    if (c < array.length) {
+                        //newArr.push(array[c++])
+                        msgbox.innerHTML = array[c++];
+                        RedLine[clc++].style.display = 'block';
+                    } else{
+                        tooltipWrap.style.display = 'none';
+                        wRap.classList.remove('is-stand');
+                        wRap.classList.add('is-active');
+                    };
+                }
+                const btnClose = document.querySelector('.btn-next-end');
+                btnClose.addEventListener('click',selfclose);
+                function selfclose(){
+                    alert('튜토리얼을 종료합니다');
+                    wRap.style.display = 'none';
+                }
+            });
+        })()
+    </script>
 </body>
 </html>
